@@ -138,6 +138,8 @@ static const int GRID_COLUMNS = 10;
 
 -(void)updateCreatures{
     
+    int numAlive = 0;
+    
     //loop through rows
     for (int i =0; i < [_gridArray count]; i++){
         
@@ -150,9 +152,10 @@ static const int GRID_COLUMNS = 10;
             //check if there is 3 neighbors
             if (creature.livingNeighbors == 3){
                 creature.isAlive = YES;
+                numAlive ++;
             }
             else if (creature.livingNeighbors == 2){
-                //do nothing
+                numAlive++;
             }
             else{
                 creature.isAlive = NO;
@@ -160,6 +163,7 @@ static const int GRID_COLUMNS = 10;
         }
     }
     
+    self.totalAlive = numAlive;
 }
 
 @end
