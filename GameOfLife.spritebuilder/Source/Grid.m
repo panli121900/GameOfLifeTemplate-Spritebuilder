@@ -155,7 +155,11 @@ static const int GRID_COLUMNS = 10;
                 numAlive ++;
             }
             else if (creature.livingNeighbors == 2){
-                numAlive++;
+                
+                //decide whether to count
+                if (creature.isAlive){
+                    numAlive++;
+                }
             }
             else{
                 creature.isAlive = NO;
@@ -163,7 +167,7 @@ static const int GRID_COLUMNS = 10;
         }
     }
     
-    self.totalAlive += numAlive;
+    self.totalAlive = numAlive;
 }
 
 @end
