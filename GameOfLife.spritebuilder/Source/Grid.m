@@ -138,7 +138,7 @@ static const int GRID_COLUMNS = 10;
 
 -(void)updateCreatures{
     
-    int numAlive = 0;
+  //  int numAlive = 0;
     
     //loop through rows
     for (int i =0; i < [_gridArray count]; i++){
